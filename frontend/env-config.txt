@@ -1,0 +1,13 @@
+# ============================================
+# AI OPS Workflow - Frontend Environment
+# ============================================
+# IMPORTANT: Copy this file and rename to .env.local
+# Run: Copy-Item env-config.txt .env.local
+
+# API Configuration - Backend URL
+NEXT_PUBLIC_API_BASE=http://localhost:8000/api/v1
+
+# Azure AD Configuration - Same as wiki3-frontend approach
+# Use the SAME Client ID and Tenant ID from your Azure AD app registration
+NEXT_PUBLIC_AAD_CLIENT_ID=588d7c1f-5c65-42cf-ad8c-c7629a252c8b
+NEXT_PUBLIC_AAD_TENANT_ID=dafe49bc-5ac3-4310-97b4-3e44a28cbf18

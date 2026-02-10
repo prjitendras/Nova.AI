@@ -1,0 +1,27 @@
+# ============================================
+# AI OPS Workflow - Frontend Environment
+# ============================================
+# Copy this file to .env.local and fill in your values
+
+# ===========================================
+# API Configuration
+# ===========================================
+# Base URL for the backend API (include /api/v1)
+# Development: http://localhost:8000/api/v1
+# Production: https://your-api-domain.com/api/v1
+NEXT_PUBLIC_API_BASE=http://localhost:8000/api/v1
+
+# ===========================================
+# Azure AD (Entra) Configuration
+# ===========================================
+NEXT_PUBLIC_AAD_CLIENT_ID="<YOUR_CLIENT_ID>"
+NEXT_PUBLIC_AAD_TENANT_ID="<YOUR_TENANT_ID>"
+NEXT_PUBLIC_AAD_REDIRECT_URI=http://localhost:3000
+NEXT_PUBLIC_AAD_API_SCOPE="api://<YOUR_BACKEND_CLIENT_ID>/access"
+
+# ===========================================
+# IMPORTANT FOR PRODUCTION DEPLOYMENT:
+# ===========================================
+# 1. Update NEXT_PUBLIC_API_BASE to your production API URL
+# 2. Update NEXT_PUBLIC_AAD_REDIRECT_URI to your production frontend URL
+# 3. Ensure AAD app registration has the correct redirect URIs configured
