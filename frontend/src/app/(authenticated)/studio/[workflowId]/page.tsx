@@ -2823,6 +2823,19 @@ function JoinConfig({ step, allSteps, onUpdate }: { step: StepTemplate; allSteps
             <SelectItem value="MAJORITY">Majority - Proceed when &gt;50% complete</SelectItem>
           </SelectContent>
         </Select>
+        {(step.join_mode === "ANY" || step.join_mode === "MAJORITY") && (
+          <div className="mt-2 p-3 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 flex items-start gap-2">
+            <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
+            <p className="text-xs text-amber-700 dark:text-amber-400">
+              <strong>Important:</strong> When using{" "}
+              <strong>
+                {step.join_mode === "ANY" ? "Any Branch" : "Majority"}
+              </strong>{" "}
+              mode, please ensure the <strong>Notify</strong> step is marked as{" "}
+              <strong>&quot;Set as End&quot;</strong>
+            </p>
+          </div>
+        )}
       </div>
 
       {step.source_fork_step_id && (

@@ -268,17 +268,16 @@ export function GlobalSearch() {
   return (
     <>
       {/* ========== TRIGGER BUTTON ========== */}
-      <Button
-        variant="outline"
+      <button
         onClick={() => setOpen(true)}
-        className="relative h-10 justify-start gap-2 text-sm text-muted-foreground w-[160px] sm:w-[240px] lg:w-[300px] xl:w-[360px] bg-background hover:bg-accent/50 hover:border-primary/30 transition-all duration-200 group"
+        className="relative h-8 flex items-center gap-2 text-xs w-[160px] sm:w-[220px] lg:w-[280px] rounded-xl px-3 bg-gradient-to-r from-muted/80 to-muted/50 border-2 border-border hover:border-primary/40 hover:from-primary/10 hover:to-purple-500/10 hover:shadow-md hover:shadow-primary/10 active:scale-[0.98] transition-all duration-300 group cursor-pointer"
       >
-        <Search className="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100 group-hover:text-primary transition-all" />
-        <span className="flex-1 text-left truncate font-normal">Search tickets...</span>
-        <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium sm:flex group-hover:border-primary/30 transition-colors">
-          <span className="text-xs">⌘</span>K
+        <Search className="h-3.5 w-3.5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+        <span className="flex-1 text-left truncate text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">Search tickets...</span>
+        <kbd className="pointer-events-none hidden h-5 select-none items-center gap-0.5 rounded-md bg-background/90 border border-border/80 px-1.5 font-mono text-[10px] font-semibold text-muted-foreground sm:flex group-hover:border-primary/40 group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+          <span className="text-[10px]">⌘</span>K
         </kbd>
-      </Button>
+      </button>
 
       {/* ========== SEARCH DIALOG ========== */}
       <Dialog open={open} onOpenChange={setOpen}>

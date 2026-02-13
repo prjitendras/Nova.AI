@@ -355,10 +355,10 @@ export function AppSidebar() {
         "bg-gradient-to-b from-background via-background to-muted/20"
       )}
     >
-      {/* Header */}
-      <SidebarHeader className="border-b border-border/50 bg-gradient-to-r from-background to-muted/30">
+      {/* Header - h-12 matches the main content header height */}
+      <SidebarHeader className="h-12 shrink-0 px-2 py-1.5 border-b border-border/50 justify-center">
         <Link href="/dashboard" className="block">
-          <div className="flex items-center justify-center gap-2.5 px-2 py-3 cursor-pointer group/brand hover:bg-accent/50 rounded-lg mx-1 my-1 transition-all duration-300 group-data-[collapsible=icon]:px-0">
+          <div className="flex items-center justify-center gap-2.5 px-3 cursor-pointer group/brand hover:bg-accent/50 rounded-lg mx-1 transition-all duration-300 group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:mx-0 group-data-[collapsible=icon]:justify-center">
             {/* Logo - always visible, centered when collapsed */}
             <div className="relative flex-shrink-0">
               <EXLLogo size="sm" variant="icon" />
