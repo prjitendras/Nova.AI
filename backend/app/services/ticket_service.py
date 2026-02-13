@@ -900,10 +900,11 @@ class TicketService:
                 open_info_request = self.ticket_repo.get_open_info_request_for_step(step.ticket_step_id)
                 has_open_info_request = open_info_request is not None
                 
-                # Check if waiting for CR (workflow paused)
-                is_waiting_for_cr = step.state == StepState.WAITING_FOR_CR
+                # A CR can be raised when task is ON_HOLD or ACTIVE, so check ticket.pending_change_request_id
+                # not just the step state
+                is_waiting_for_cr = bool(ticket.pending_change_request_id)
                 pending_cr_info = None
-                if is_waiting_for_cr and ticket.pending_change_request_id:
+                if is_waiting_for_cr:
                     # Get CR details for the banner
                     cr_collection = get_collection("change_requests")
                     cr_doc = cr_collection.find_one({"change_request_id": ticket.pending_change_request_id})
